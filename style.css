@@ -46,7 +46,6 @@ body{
 .envelope .envelope-controls .envelope-close{ display:none }
 .envelope.opened .envelope-controls .envelope-close{ display:inline-block }
 
-/* smaller screens tweak */
 @media (max-width:480px){
 	.envelope-front{ left:8%; right:8% }
 }
@@ -69,7 +68,7 @@ header h1{
 .date{ font-weight:600; color:var(--mint-dark) }
 .venue{ opacity:0.95 }
 
-.rsvp{ display:flex; flex-direction:column; align-items:center; gap:12px }
+.rsvp{ display:flex; flex-direction:column; align-items:center; }
 .btn{
 	display:inline-block;
 	padding:12px 22px;
