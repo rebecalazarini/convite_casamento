@@ -60,7 +60,7 @@ header h1{
 }
 .names{
 	margin:8px 0 24px;
-	font-family:'Playfair Display',serif;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-size:34px;
 	text-align:center;
 	color:var(--text);
