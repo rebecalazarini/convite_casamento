@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carrossel</title>
+  <title>Casamento</title>
   <style>
     body {
       background: url("like.jpeg");
@@ -57,35 +57,6 @@
       filter: blur(3px);
     }
 
-    .prev,
-    .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 30px;
-      padding: 10px 15px;
-      border-radius: 50%;
-      transition: background 0.3s;
-      z-index: 2;
-    }
-
-    .prev:hover,
-    .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .prev {
-      left: 10px;
-    }
-
-    .next {
-      right: 10px;
-    }
-
     .carousel-indicators {
       display: flex;
       gap: 10px;
@@ -115,17 +86,12 @@
         width: 90%;
       }
 
-      .prev,
-      .next {
-        font-size: 20px;
-        padding: 8px;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="carousel" aria-label="Galeria de imagens de Petshop">
-    <img src="rosto.jpg" class="active" />
+  <div class="carousel" aria-label="carrossel">
+    <img src="rosto.jpg"/>
     <img src="bolo.jpg" />
     <img src="casal.jpg"/>
     <img src="fotocasal.jpg" />
@@ -141,8 +107,7 @@
       const indicatorsContainer = document.querySelector('.carousel-indicators');
 
       let currentIndex = 0;
-
-      // Cria os pontinhos (indicadores)
+	  
       images.forEach((_, index) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
