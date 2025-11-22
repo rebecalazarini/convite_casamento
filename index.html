@@ -5,15 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casamento</title>
   <style>
-    body {
-      background: url("like.jpeg");
+       body {
+      margin: 0;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      overflow: hidden;
+      position: relative;
     }
+
+    /* imagem de fundo direta no body */
+    body img.bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
     .carousel {
       position: relative;
       width: 80%;
@@ -145,6 +158,9 @@ h3, h4{
   </style>
 </head>
 <body>
+
+   <img src="like.jpeg" alt="fundo" class="bg">
+   
   <h3>Lu & Clau - 27 anos</h3>
   <div class="carousel" aria-label="carrossel">
     <img src="rosto.jpg"/>
