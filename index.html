@@ -3,16 +3,22 @@
 <head>
 <style>
 body {
- background: url("transferir.jpeg");
   margin: 0;
   height: 100vh;
   overflow: hidden;
   color: #fff;
   font-size: 2em;
-  background-attachment: fixed;
-background-size: cover;
-background-position: center;
+}
 
+.fundo-fixo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("transferir.jpeg") no-repeat center center;
+  background-size: cover;
+  z-index: 0;
 }
 
 @keyframes fogos {
@@ -266,17 +272,20 @@ background-position: center;
   background-color: #70809076;
   padding: 30px;
   border-radius: 10px;
-  z-index: 1000;              /* fica acima de tudo */
-  will-change: transform;     /* melhora desempenho e suaviza */
-  backface-visibility: hidden;/* impede o texto de "vibrar" com 3D */
-  transform-style: flat;      /* evita efeito 3D herdado */
-  isolation: isolate;         /* cria um novo contexto independente */
+  z-index: 10;
+  backface-visibility: hidden;
+  transform-style: flat;
+  isolation: isolate;
+  text-align: center;
+  max-width: 80%;
 }
 
 
 </style>
 </head>
 <body>
+
+	  <div class="fundo-fixo"></div>
 
 	  <div class="texto-centro">
     <strong>Lu & Clau — 27 anos</strong><br>
