@@ -3,11 +3,16 @@
 <head>
 <style>
 body {
+ background: url("transferir.jpeg");
   margin: 0;
   height: 100vh;
   overflow: hidden;
   color: #fff;
   font-size: 2em;
+  background-attachment: fixed;
+background-size: cover;
+background-position: center;
+
 }
 
 @keyframes fogos {
@@ -16,12 +21,6 @@ body {
   100% { width: var(--finalSize); opacity: 0; }
 }
 
-/* @keyframes fogosPseudo {
-  0% { transform: translate(-50%, -50%); width: var(--initialSize); opacity: 1; }
-  50% { width: 0.5vmin; opacity: 1; }
-  100% { width: var(--finalSize); opacity: 0; }
-}
- */
 .fogos,
 .fogos::before,
 .fogos::after
@@ -47,12 +46,12 @@ body {
   width: var(--initialSize);
   aspect-ratio: 1;
   background: 
-    /*
+    
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,
-    */
+   
     
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,
     radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
@@ -256,12 +255,8 @@ body {
   animation-delay: -10s;
 }
 
-body img {
-	width: 100%;
-}
-
 .texto-centro {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -271,12 +266,17 @@ body img {
   background-color: #70809076;
   padding: 30px;
   border-radius: 10px;
+  z-index: 1000;              /* fica acima de tudo */
+  will-change: transform;     /* melhora desempenho e suaviza */
+  backface-visibility: hidden;/* impede o texto de "vibrar" com 3D */
+  transform-style: flat;      /* evita efeito 3D herdado */
+  isolation: isolate;         /* cria um novo contexto independente */
 }
+
 
 </style>
 </head>
 <body>
-	<img src="transferir.jpeg">
 
 	  <div class="texto-centro">
     <strong>Lu & Clau — 27 anos</strong><br>
@@ -285,8 +285,6 @@ body img {
     Nesta data especial, vamos comemorar o amor, a união e a família construída com tanto carinho.<br>
     Sua presença tornará esse momento ainda mais especial.
   </div>
-
-<div>fogoss</div>
 <div class="fogos"></div>
 <div class="fogos"></div>
 <div class="fogos"></div>
